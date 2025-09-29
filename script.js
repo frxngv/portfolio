@@ -1,14 +1,13 @@
-// ====== SMOOTH SCROLL AND INTERACTIONS ======
+// ====== MOBILE MENU FUNCTIONALITY ======
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu functionality
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
-    const navItems = document.querySelectorAll('.nav-link');
+    const navItems = document.querySelectorAll('.nav-links a');
     
     // Toggle mobile menu
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', function() {
             this.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close mobile menu when clicking on a link
     navItems.forEach(item => {
         item.addEventListener('click', function() {
-            mobileMenuBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
             navLinks.classList.remove('active');
         });
     });
@@ -27,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
-            header.classList.add('scrolled');
+            header.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
         } else {
-            header.classList.remove('scrolled');
+            header.style.backgroundColor = 'rgba(10, 10, 10, 0.9)';
         }
     });
     
-    // Smooth scrolling for anchor links
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -47,116 +46,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Intersection Observer for fade-in animations
-    const fadeElements = document.querySelectorAll('.section, .skill-category, .contact-method');
+    // Simple fade-in animation on scroll
+    const sections = document.querySelectorAll('.section');
     
-    const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+    const fadeInOnScroll = function() {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const sectionVisible = 150;
+            
+            if (sectionTop < window.innerHeight - sectionVisible) {
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    fadeElements.forEach(element => {
-        element.classList.add('fade-in');
-        fadeObserver.observe(element);
-    });
-    
-    // Floating cards animation enhancement
-    const floatingCards = document.querySelectorAll('.floating-card');
-    
-    floatingCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.05)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-    
-    // Skill items hover effect
-    const skillItems = document.querySelectorAll('.skill-item');
-    
-    skillItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateX(8px)';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateX(0)';
-        });
-    });
-    
-    // Contact method hover effect enhancement
-    const contactMethods = document.querySelectorAll('.contact-method');
-    
-    contactMethods.forEach(method => {
-        method.addEventListener('mouseenter', function() {
-            const icon = this.querySelector('.method-icon');
-            icon.style.transform = 'scale(1.1)';
-        });
-        
-        method.addEventListener('mouseleave', function() {
-            const icon = this.querySelector('.method-icon');
-            icon.style.transform = 'scale(1)';
-        });
-    });
-    
-    // Add loading animation
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-    });
-    
-    // Parallax effect for hero background
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.backgroundPosition = `center ${scrolled * 0.5}px`;
-        }
-    });
-    
-    // Dynamic year in footer
-    const yearElement = document.querySelector('footer p:first-child');
-    if (yearElement) {
-        const currentYear = new Date().getFullYear();
-        yearElement.textContent = `© ${currentYear} Francisco González-Llanos`;
-    }
-});
-
-// ====== ADDITIONAL UTILITY FUNCTIONS ======
-
-// Debounce function for scroll events
-function debounce(func, wait, immediate) {
-    let timeout;
-    return function() {
-        const context = this, args = arguments;
-        const later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        const callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
     };
-}
-
-// Throttle function for resize events
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    }
-}
+    
+    // Set initial state
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+    
+    // Check on load and scroll
+    fadeInOnScroll();
+    window.addEventListener('scroll', fadeInOnScroll);
+});
