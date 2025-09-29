@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initSmoothScrolling();
     initNavigationIndicator();
-    initTypewriterEffect();
-    initMouseEffects();
+    initHoverEffects();
 });
 
 // Floating navigation behavior
@@ -61,7 +60,7 @@ function initScrollAnimations() {
 
     // Observe elements for animation
     const animatedElements = document.querySelectorAll(
-        '.skill-category, .about-content, .contact-content, .project-card'
+        '.skill-category, .about-content, .contact-content, .project-card, .highlight'
     );
     
     animatedElements.forEach(el => {
@@ -130,62 +129,6 @@ function initNavigationIndicator() {
     updateIndicator(); // Initial call
 }
 
-// Typewriter effect for terminal
-function initTypewriterEffect() {
-    const terminalLines = document.querySelectorAll('.terminal-line');
-    let currentLine = 0;
-    
-    function typeLine() {
-        if (currentLine < terminalLines.length) {
-            const line = terminalLines[currentLine];
-            const text = line.textContent;
-            line.textContent = '';
-            line.style.opacity = '1';
-            
-            let charIndex = 0;
-            function typeChar() {
-                if (charIndex < text.length) {
-                    line.textContent += text.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(typeChar, 50);
-                } else {
-                    currentLine++;
-                    setTimeout(typeLine, 500);
-                }
-            }
-            typeChar();
-        }
-    }
-    
-    // Start typing when about section is in view
-    const aboutObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            setTimeout(typeLine, 1000);
-            aboutObserver.unobserve(entries[0].target);
-        }
-    });
-    
-    aboutObserver.observe(document.querySelector('#about'));
-}
-
-// Mouse move effects for gradient orbs
-function initMouseEffects() {
-    const orbs = document.querySelectorAll('.orb');
-    
-    document.addEventListener('mousemove', (e) => {
-        const mouseX = e.clientX / window.innerWidth;
-        const mouseY = e.clientY / window.innerHeight;
-        
-        orbs.forEach((orb, index) => {
-            const speed = (index + 1) * 0.3;
-            const x = (mouseX - 0.5) * speed * 40;
-            const y = (mouseY - 0.5) * speed * 40;
-            
-            orb.style.transform = `translate(${x}px, ${y}px)`;
-        });
-    });
-}
-
 // Enhanced hover effects
 function initHoverEffects() {
     // Skill cards hover
@@ -211,10 +154,42 @@ function initHoverEffects() {
             this.style.transform = 'translateY(0)';
         });
     });
+
+    // Contact method hover
+    const contactMethods = document.querySelectorAll('.contact-method');
+    contactMethods.forEach(method => {
+        method.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.method-icon');
+            icon.style.transform = 'scale(1.1)';
+        });
+        
+        method.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.method-icon');
+            icon.style.transform = 'scale(1)';
+        });
+    });
 }
 
-// Initialize hover effects after page load
-setTimeout(initHoverEffects, 1000);
+// Mouse move effects for gradient spots
+function initMouseEffects() {
+    const spots = document.querySelectorAll('.gradient-spot');
+    
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        spots.forEach((spot, index) => {
+            const speed = (index + 1) * 0.3;
+            const x = (mouseX - 0.5) * speed * 40;
+            const y = (mouseY - 0.5) * speed * 40;
+            
+            spot.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    });
+}
+
+// Initialize mouse effects
+setTimeout(initMouseEffects, 1000);
 
 // Performance optimized scroll handler
 const debounce = (func, wait) => {
@@ -236,10 +211,10 @@ window.addEventListener('scroll', debounce(() => {
 // Add elegant console message
 console.log(`%c
 ╔═══════════════════════════════════════╗
-║          FRANCISCO GONZÁLEZ-LLANOS    ║
-║           VIVANCO PORTFOLIO           ║
-║        Cloud & DevOps Engineer        ║
+║        FRANCISCO GONZÁLEZ-LLANOS      ║
+║              VIVANCO                  ║
+║        Kubernetes & CI/CD             ║
 ╚═══════════════════════════════════════╝
 `, 'color: #FF6B35; font-family: monospace;');
 
-console.log('%cCrafted with minimalistic elegance and precision', 'color: #8A2BE2; font-size: 12px;');
+console.log('%cMinimalist design focused on cloud-native technologies', 'color: #8A2BE2; font-size: 12px;');

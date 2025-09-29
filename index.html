@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco González-Llanos Vivanco - Cloud Engineer</title>
+    <title>Francisco González-Llanos Vivanco - DevOps Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,8 +13,7 @@
     <nav class="floating-nav">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-mark">◉</span>
-                <span class="logo-text">Francisco</span>
+                <span class="logo-mark">//</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -29,28 +28,26 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-background">
-            <div class="grid-overlay"></div>
-            <div class="gradient-orbs">
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
-            </div>
+            <div class="grid-lines"></div>
+            <div class="gradient-spot spot-1"></div>
+            <div class="gradient-spot spot-2"></div>
         </div>
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <span>Cloud & DevOps Engineer</span>
+                    <span>Kubernetes & CI/CD Specialist</span>
                 </div>
                 <h1 class="hero-title">
                     <span class="title-line">Francisco</span>
                     <span class="title-line accent">González-Llanos Vivanco</span>
                 </h1>
                 <p class="hero-description">
-                    Building scalable cloud architectures and elegant infrastructure solutions. 
-                    Passionate about DevOps practices and modern technologies.
+                    Building scalable container orchestration and automated deployment pipelines. 
+                    Passionate about cloud-native technologies and DevOps practices.
                 </p>
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-primary">
-                        <span>Get in Touch</span>
+                        <span>Connect</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="#projects" class="btn btn-secondary">
@@ -61,7 +58,6 @@
         </div>
         <div class="scroll-hint">
             <div class="scroll-line"></div>
-            <span>Scroll to explore</span>
         </div>
     </section>
 
@@ -70,55 +66,29 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">01</span>
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title">About</h2>
             </div>
-            <div class="about-grid">
-                <div class="about-content">
-                    <p class="text-lead">
-                        Computer Engineering student at University of Oviedo (EPI Gijón) 
-                        with international experience from Erasmus program in Poland.
-                    </p>
-                    <p>
-                        My focus is on creating efficient, scalable cloud systems that make a difference. 
-                        I believe in the power of cloud computing to transform how we build and deploy applications.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <div class="stat-number">2+</div>
-                            <div class="stat-label">Years Learning</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Technologies</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Cloud Focus</div>
-                        </div>
+            <div class="about-content">
+                <p class="text-lead">
+                    Computer Engineering student at University of Oviedo, specializing in cloud-native technologies 
+                    and modern DevOps practices.
+                </p>
+                <p>
+                    Currently focused on Kubernetes orchestration, CI/CD pipeline automation, and cloud infrastructure. 
+                    My journey involves exploring the ecosystem of container technologies and infrastructure as code.
+                </p>
+                <div class="about-highlights">
+                    <div class="highlight">
+                        <i class="fab fa-linux"></i>
+                        <span>Linux Environment</span>
                     </div>
-                </div>
-                <div class="about-visual">
-                    <div class="visual-card">
-                        <div class="card-glow"></div>
-                        <div class="terminal">
-                            <div class="terminal-header">
-                                <div class="terminal-dots">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div>
-                            <div class="terminal-content">
-                                <div class="terminal-line">
-                                    <span class="prompt">$</span>
-                                    <span>focus_areas = ["Cloud", "DevOps", "Automation"]</span>
-                                </div>
-                                <div class="terminal-line">
-                                    <span class="prompt">$</span>
-                                    <span>print(focus_areas)</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="highlight">
+                        <i class="fas fa-code-branch"></i>
+                        <span>CI/CD Pipelines</span>
+                    </div>
+                    <div class="highlight">
+                        <i class="fas fa-ship"></i>
+                        <span>Containerization</span>
                     </div>
                 </div>
             </div>
@@ -130,9 +100,37 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">02</span>
-                <h2 class="section-title">Skills & Technologies</h2>
+                <h2 class="section-title">Skills</h2>
             </div>
             <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <h3>Container Orchestration</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>Kubernetes</li>
+                        <li>Docker</li>
+                        <li>Helm Charts</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h3>CI/CD & Automation</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li>GitHub Actions</li>
+                        <li>Jenkins</li>
+                        <li>GitLab CI</li>
+                    </ul>
+                </div>
+                
                 <div class="skill-category">
                     <div class="skill-header">
                         <div class="skill-icon">
@@ -143,35 +141,7 @@
                     <ul class="skill-list">
                         <li>Microsoft Azure</li>
                         <li>AWS</li>
-                        <li>Cloud Architecture</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-infinity"></i>
-                        </div>
-                        <h3>DevOps</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li>CI/CD Pipelines</li>
-                        <li>Automation</li>
-                        <li>Best Practices</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <h3>Containers</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li>Docker</li>
-                        <li>Kubernetes</li>
-                        <li>Containerization</li>
+                        <li>Google Cloud</li>
                     </ul>
                 </div>
                 
@@ -180,12 +150,12 @@
                         <div class="skill-icon">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3>Development</h3>
+                        <h3>Infrastructure as Code</h3>
                     </div>
                     <ul class="skill-list">
-                        <li>Infrastructure as Code</li>
-                        <li>Python Scripting</li>
                         <li>Terraform</li>
+                        <li>Ansible</li>
+                        <li>Python Scripting</li>
                     </ul>
                 </div>
             </div>
@@ -201,16 +171,15 @@
             </div>
             <div class="projects-container">
                 <div class="project-card">
-                    <div class="project-glow"></div>
                     <div class="project-content">
                         <div class="project-icon">
-                            <i class="fas fa-spinner fa-spin"></i>
+                            <i class="fas fa-rocket"></i>
                         </div>
-                        <h3>Innovation in Progress</h3>
-                        <p>Currently developing cutting-edge cloud solutions that will be showcased here soon.</p>
+                        <h3>Cloud-Native Solutions</h3>
+                        <p>Building innovative Kubernetes-based infrastructure and automated deployment systems.</p>
                         <div class="project-status">
                             <span class="status-dot"></span>
-                            <span>IN DEVELOPMENT</span>
+                            <span>ACTIVE DEVELOPMENT</span>
                         </div>
                     </div>
                 </div>
@@ -223,50 +192,40 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">04</span>
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title">Contact</h2>
             </div>
-            <div class="contact-grid">
-                <div class="contact-content">
-                    <p class="contact-intro">
-                        Interested in collaboration or discussing cloud technologies? 
-                        I'm always open to meaningful conversations.
-                    </p>
-                    <div class="contact-methods">
-                        <a href="mailto:frxngv@gmail.com" class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="method-details">
-                                <span class="method-label">Email</span>
-                                <span class="method-value">frxngv@gmail.com</span>
-                            </div>
-                        </a>
-                        
-                        <a href="https://www.linkedin.com/in/fran-glez/" class="contact-method">
-                            <div class="method-icon">
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                            <div class="method-details">
-                                <span class="method-label">LinkedIn</span>
-                                <span class="method-value">fran-glez</span>
-                            </div>
-                        </a>
-                        
-                        <a href="https://github.com/frxngv" class="contact-method">
-                            <div class="method-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="method-details">
-                                <span class="method-label">GitHub</span>
-                                <span class="method-value">frxngv</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-visual">
-                    <div class="contact-message">
-                        <p>Let's build the future of cloud infrastructure together</p>
-                    </div>
+            <div class="contact-content">
+                <p class="contact-intro">
+                    Interested in Kubernetes, CI/CD, or cloud-native technologies? 
+                    Let's discuss innovative solutions and potential collaborations.
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:frxngv@gmail.com" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-details">
+                            <span class="method-value">frxngv@gmail.com</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/fran-glez/" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="method-details">
+                            <span class="method-value">fran-glez</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/frxngv" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="method-details">
+                            <span class="method-value">frxngv</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -277,7 +236,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <span class="logo-mark">◉</span>
+                    <span class="logo-mark">//</span>
                     <span>Francisco González-Llanos Vivanco</span>
                 </div>
                 <div class="footer-links">
@@ -293,7 +252,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Francisco González-Llanos Vivanco. Crafted with precision.</p>
+                <p>© 2025 Francisco González-Llanos Vivanco</p>
             </div>
         </div>
     </footer>
