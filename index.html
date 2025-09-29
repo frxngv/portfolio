@@ -6,37 +6,57 @@
     <title>Francisco González-Llanos Vivanco</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text">Francisco</span>
+                <span class="logo-text">FRANCISCO</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#skills" class="nav-link">SKILLS</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
+                <div class="hero-badge">
+                    <span>CLOUD-NATIVE DEVELOPER</span>
+                </div>
                 <h1 class="hero-title">
-                    Francisco<br>González-Llanos<br>Vivanco
+                    <span class="title-line">FRANCISCO</span>
+                    <span class="title-line gradient-text">GONZÁLEZ-LLANOS</span>
+                    <span class="title-line gradient-text">VIVANCO</span>
                 </h1>
                 <p class="hero-description">
-                    Exploring Kubernetes, CI/CD, and cloud-native technologies.
+                    BUILDING SCALABLE SYSTEMS WITH KUBERNETES & MODERN DEVOPS
                 </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>GET IN TOUCH</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#skills" class="btn btn-secondary">
+                        <span>VIEW SKILLS</span>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">
-            <span>Scroll</span>
+            <div class="scroll-line"></div>
+            <span>SCROLL TO EXPLORE</span>
         </div>
     </section>
 
@@ -44,13 +64,14 @@
     <section id="about" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About</h2>
+                <h2 class="section-title gradient-text">ABOUT ME</h2>
             </div>
             <div class="about-content">
                 <p class="about-text">
-                    Computer Engineering student at University of Oviedo, currently exploring 
-                    container orchestration and modern deployment practices. Focused on 
-                    understanding Kubernetes ecosystems and building efficient CI/CD pipelines.
+                    COMPUTER ENGINEERING STUDENT EXPLORING THE CLOUD-NATIVE ECOSYSTEM. 
+                    PASSIONATE ABOUT KUBERNETES, CI/CD PIPELINES, AND BUILDING RESILIENT 
+                    INFRASTRUCTURE. CURRENTLY FOCUSED ON MASTERING CONTAINER ORCHESTRATION 
+                    AND MODERN DEPLOYMENT STRATEGIES.
                 </p>
             </div>
         </div>
@@ -60,33 +81,42 @@
     <section id="skills" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Interests</h2>
+                <h2 class="section-title gradient-text">TECHNICAL INTERESTS</h2>
             </div>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3 class="skill-title">Container Orchestration</h3>
+                    <div class="skill-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3 class="skill-title">CONTAINER ORCHESTRATION</h3>
                     <ul class="skill-list">
-                        <li>Kubernetes</li>
-                        <li>Docker</li>
-                        <li>Helm</li>
+                        <li>KUBERNETES</li>
+                        <li>DOCKER</li>
+                        <li>HELM</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h3 class="skill-title">CI/CD & Automation</h3>
+                    <div class="skill-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3 class="skill-title">CI/CD & AUTOMATION</h3>
                     <ul class="skill-list">
-                        <li>GitHub Actions</li>
-                        <li>Jenkins</li>
-                        <li>GitLab CI</li>
+                        <li>GITHUB ACTIONS</li>
+                        <li>JENKINS</li>
+                        <li>GITLAB CI</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h3 class="skill-title">Cloud Platforms</h3>
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="skill-title">CLOUD PLATFORMS</h3>
                     <ul class="skill-list">
-                        <li>Microsoft Azure</li>
+                        <li>MICROSOFT AZURE</li>
                         <li>AWS</li>
-                        <li>Google Cloud</li>
+                        <li>GOOGLE CLOUD</li>
                     </ul>
                 </div>
             </div>
@@ -97,24 +127,50 @@
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Contact</h2>
+                <h2 class="section-title gradient-text">LET'S CONNECT</h2>
             </div>
             <div class="contact-content">
                 <p class="contact-text">
-                    Interested in discussing cloud-native technologies or potential collaborations?
+                    READY TO DISCUSS CLOUD-NATIVE TECHNOLOGIES AND INNOVATIVE SOLUTIONS
                 </p>
-                <div class="contact-links">
-                    <a href="mailto:frxngv@gmail.com" class="contact-link">
-                        <span class="link-label">Email</span>
-                        <span class="link-value">frxngv@gmail.com</span>
+                <div class="contact-grid">
+                    <a href="mailto:frxngv@gmail.com" class="contact-card">
+                        <div class="card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>EMAIL</h3>
+                            <p>frxngv@gmail.com</p>
+                        </div>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/fran-glez/" class="contact-link">
-                        <span class="link-label">LinkedIn</span>
-                        <span class="link-value">fran-glez</span>
+                    
+                    <a href="https://www.linkedin.com/in/fran-glez/" class="contact-card">
+                        <div class="card-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>LINKEDIN</h3>
+                            <p>fran-glez</p>
+                        </div>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </a>
-                    <a href="https://github.com/frxngv" class="contact-link">
-                        <span class="link-label">GitHub</span>
-                        <span class="link-value">frxngv</span>
+                    
+                    <a href="https://github.com/frxngv" class="contact-card">
+                        <div class="card-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>GITHUB</h3>
+                            <p>frxngv</p>
+                        </div>
+                        <div class="card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -125,7 +181,23 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Francisco González-Llanos Vivanco</p>
+                <div class="footer-brand">
+                    <span class="logo-text">FRANCISCO</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/fran-glez/" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/frxngv" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:frxngv@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 FRANCISCO GONZÁLEZ-LLANOS VIVANCO</p>
             </div>
         </div>
     </footer>
