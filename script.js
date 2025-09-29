@@ -1,4 +1,4 @@
-// ====== ULTRA-MINIMALIST PORTFOLIO SCRIPT ======
+// ====== MINIMALIST PORTFOLIO SCRIPT ======
 
 document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
@@ -41,28 +41,6 @@ function initScrollAnimations() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-                
-                // Stagger animations for skill categories
-                if (entry.target.classList.contains('skills-grid')) {
-                    const children = entry.target.children;
-                    Array.from(children).forEach((child, index) => {
-                        setTimeout(() => {
-                            child.style.opacity = '1';
-                            child.style.transform = 'translateY(0)';
-                        }, index * 150);
-                    });
-                }
-                
-                // Stagger animations for contact links
-                if (entry.target.classList.contains('contact-links')) {
-                    const children = entry.target.children;
-                    Array.from(children).forEach((child, index) => {
-                        setTimeout(() => {
-                            child.style.opacity = '1';
-                            child.style.transform = 'translateY(0)';
-                        }, index * 100);
-                    });
-                }
             }
         });
     }, observerOptions);
@@ -105,30 +83,6 @@ function initHoverEffects() {
             this.style.transform = 'translateY(-5px)';
         });
     });
-
-    // Navigation link hover
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.color = 'var(--accent)';
-        });
-        
-        link.addEventListener('mouseleave', function() {
-            this.style.color = '';
-        });
-    });
 }
 
-// Add elegant console message
-console.log(`%c
-███████╗██████╗ ██████╗ ███╗   ██╗███████╗
-██╔════╝██╔══██╗██╔══██╗████╗  ██║██╔════╝
-█████╗  ██████╔╝██████╔╝██╔██╗ ██║███████╗
-██╔══╝  ██╔══██╗██╔══██╗██║╚██╗██║╚════██║
-███████╗██║  ██║██████╔╝██║ ╚████║███████║
-╚══════╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═══╝╚══════╝
-                                           
-Minimalist Portfolio — Francisco González-Llanos Vivanco
-`, 'color: #ff6b35; font-family: monospace;');
-
-console.log('%cCrafted with precision and attention to detail', 'color: #a0a0a0; font-size: 12px;');
+console.log('%cPortfolio — Clean & Minimal', 'color: #ff6b35; font-size: 14px; font-weight: bold;');
