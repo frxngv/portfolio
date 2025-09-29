@@ -71,4 +71,82 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check on load and scroll
     fadeInOnScroll();
     window.addEventListener('scroll', fadeInOnScroll);
+
+    // Add hover effects for skill items
+    const skillItems = document.querySelectorAll('.skill-category li');
+    
+    skillItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.color = 'var(--dark-text)';
+            this.style.transform = 'translateX(5px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.color = 'var(--dark-text-secondary)';
+            this.style.transform = 'translateX(0)';
+        });
+    });
+
+    // Add hover effects for buttons
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Add current year to footer
+    const currentYear = new Date().getFullYear();
+    const footerText = document.querySelector('footer p');
+    if (footerText) {
+        footerText.textContent = `© ${currentYear} Francisco González-Llanos. Built with ❤️ and lots of coffee.`;
+    }
 });
+
+// ====== ADDITIONAL ENHANCEMENTS ======
+
+// Debounce function for scroll events
+function debounce(func, wait) {
+    let timeout;
+    return function() {
+        const context = this, args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
+
+// Throttle function for resize events
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+// Enhanced scroll handler with debounce
+window.addEventListener('scroll', debounce(function() {
+    // Add any additional scroll-based animations here
+}, 10));
+
+// Handle window resize
+window.addEventListener('resize', throttle(function() {
+    // Close mobile menu if window is resized to desktop size
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        navLinks.classList.remove('active');
+    }
+}, 250));
