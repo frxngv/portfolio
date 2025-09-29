@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,80 +8,132 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- ====== HEADER / NAVBAR ====== -->
-    <header>
+    <!-- ====== HEADER ====== -->
+    <header class="urban-header">
         <nav class="navbar">
-            <h1 class="logo">Francisco G. V.</h1>
+            <div class="nav-brand">
+                <span class="logo-graphic">◉</span>
+                <h1 class="logo">FRANCISCO</h1>
+            </div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#skills" class="nav-link">SKILLS</a></li>
+                <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
             </ul>
             <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
             </div>
         </nav>
     </header>
 
-    <!-- ====== HERO SECTION ====== -->
+    <!-- ====== HERO ====== -->
     <section class="hero">
+        <div class="hero-graphic">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
         <div class="hero-content">
-            <h1>Hello, I'm Francisco <span class="wave">👋</span></h1>
-            <p class="hero-subtitle">Computer Engineering Student & Cloud Enthusiast</p>
-            <p class="hero-description">
-                Passionate about Cloud Computing, DevOps, and modern technologies. 
-                Currently finishing my degree at University of Oviedo (EPI Gijón).
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#projects" class="btn btn-secondary">View My Work</a>
+            <div class="hero-badge">CLOUD ENGINEER</div>
+            <h1 class="hero-title">
+                FRANCISCO
+                <span class="title-accent">G.V.</span>
+            </h1>
+            <p class="hero-tagline">Building the future of cloud infrastructure</p>
+            <div class="hero-actions">
+                <a href="#contact" class="cta-button primary">
+                    <span>CONNECT</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#projects" class="cta-button secondary">
+                    <span>WORK</span>
+                    <i class="fas fa-code"></i>
+                </a>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span>Scroll down</span>
-            <div class="arrow"></div>
+        <div class="scroll-cue">
+            <div class="scroll-line"></div>
+            <span>EXPLORE</span>
         </div>
     </section>
 
-    <!-- ====== ABOUT SECTION ====== -->
+    <!-- ====== ABOUT ====== -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm currently finishing my Computer Engineering degree at the University of Oviedo (EPI Gijón).
-                        I had the opportunity to study abroad in Poland (Erasmus), which helped me grow both personally and academically.
-                    </p>
-                    <p>
-                        My interests are focused on Cloud Computing, DevOps, Kubernetes, and infrastructure automation. 
-                        I enjoy building efficient systems and learning about the latest technologies in the cloud ecosystem.
-                    </p>
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">ABOUT</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="lead">
+                            Computer Engineering Student & Cloud Specialist based in Oviedo
+                        </p>
+                        <p>
+                            Currently finishing my degree at University of Oviedo (EPI Gijón) 
+                            with international experience from Erasmus in Poland.
+                        </p>
+                        <p>
+                            Passionate about building scalable cloud architectures, 
+                            DevOps practices, and infrastructure automation.
+                        </p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Years Learning</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Cloud Focus</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-user"></i>
-                        <span>Pic of me</span>
+                <div class="about-visual">
+                    <div class="visual-card">
+                        <div class="card-glow"></div>
+                        <div class="code-snippet">
+                            <div class="code-line">
+                                <span class="code-keyword">cloud</span>
+                                <span class="code-operator">=</span>
+                                <span class="code-string">"future"</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-keyword">passion</span>
+                                <span class="code-operator">=</span>
+                                <span class="code-string">"devops"</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== SKILLS SECTION ====== -->
+    <!-- ====== SKILLS ====== -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">SKILLS</h2>
+            </div>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-cloud"></i>
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>CLOUD</h3>
                     </div>
-                    <h3>Cloud Platforms</h3>
-                    <ul>
+                    <ul class="skill-list">
                         <li>Microsoft Azure</li>
                         <li>AWS</li>
                         <li>Cloud Architecture</li>
@@ -89,23 +141,27 @@
                 </div>
                 
                 <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-code-branch"></i>
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>DEVOPS</h3>
                     </div>
-                    <h3>DevOps & CI/CD</h3>
-                    <ul>
-                        <li>DevOps Practices</li>
+                    <ul class="skill-list">
                         <li>CI/CD Pipelines</li>
                         <li>Automation</li>
+                        <li>Best Practices</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-cube"></i>
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3>CONTAINERS</h3>
                     </div>
-                    <h3>Containers</h3>
-                    <ul>
+                    <ul class="skill-list">
                         <li>Docker</li>
                         <li>Kubernetes</li>
                         <li>Containerization</li>
@@ -113,48 +169,66 @@
                 </div>
                 
                 <div class="skill-category">
-                    <div class="skill-icon">
-                        <i class="fas fa-tools"></i>
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>DEV</h3>
                     </div>
-                    <h3>Infrastructure & Dev</h3>
-                    <ul>
-                        <li>Infrastructure as Code (Terraform)</li>
-                        <li>Scripting (Python)</li>
+                    <ul class="skill-list">
+                        <li>Infrastructure as Code</li>
+                        <li>Python Scripting</li>
+                        <li>Terraform</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== PROJECTS SECTION ====== -->
+    <!-- ====== PROJECTS ====== -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-container">
-                <div class="project-placeholder">
-                    <i class="fas fa-code"></i>
-                    <h3>Projects Coming Soon</h3>
-                    <p>I'm currently working on some exciting projects. Check back later to see what I've been building!</p>
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">PROJECTS</h2>
+            </div>
+            <div class="projects-showcase">
+                <div class="project-card">
+                    <div class="project-glow"></div>
+                    <div class="project-content">
+                        <div class="project-icon">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                        <h3>COMING SOON</h3>
+                        <p>Building something amazing in the cloud</p>
+                        <div class="project-status">
+                            <span class="status-dot"></span>
+                            <span>IN DEVELOPMENT</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== CONTACT SECTION ====== -->
+    <!-- ====== CONTACT ====== -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">CONTACT</h2>
+            </div>
+            <div class="contact-grid">
                 <div class="contact-info">
-                    <p>If you'd like to collaborate or just say hello, feel free to reach out:</p>
+                    <p class="contact-lead">Let's build the future of cloud together</p>
                     
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>Email</h3>
-                            <a href="mailto:frxngv@gmail.com">frxngv@gmail.com</a>
+                            <span class="contact-label">EMAIL</span>
+                            <a href="mailto:frxngv@gmail.com" class="contact-link">frxngv@gmail.com</a>
                         </div>
                     </div>
                     
@@ -163,8 +237,8 @@
                             <i class="fab fa-linkedin"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/fran-glez/">www.linkedin.com/in/fran-glez/</a>
+                            <span class="contact-label">LINKEDIN</span>
+                            <a href="https://www.linkedin.com/in/fran-glez/" class="contact-link">fran-glez</a>
                         </div>
                     </div>
                     
@@ -173,8 +247,29 @@
                             <i class="fab fa-github"></i>
                         </div>
                         <div class="contact-details">
-                            <h3>GitHub</h3>
-                            <a href="https://github.com/frxngv">github.com/frxngv</a>
+                            <span class="contact-label">GITHUB</span>
+                            <a href="https://github.com/frxngv" class="contact-link">frxngv</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-visual">
+                    <div class="visual-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span>connect --cloud-engineer francisco</span>
+                            </div>
+                            <div class="terminal-line output">
+                                > Ready to collaborate on cloud projects
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -183,12 +278,24 @@
     </section>
 
     <!-- ====== FOOTER ====== -->
-    <footer>
+    <footer class="urban-footer">
         <div class="container">
-            <p>© 2025 Francisco González-Llanos. Built with ❤️ and lots of coffee.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/fran-glez/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/frxngv"><i class="fab fa-github"></i></a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-graphic">◉</span>
+                    <span class="brand-name">FRANCISCO</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/fran-glez/" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/frxngv" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 FRANCISCO GONZÁLEZ-VALLINAS. CRAFTED WITH CLOUD PASSION</p>
             </div>
         </div>
     </footer>

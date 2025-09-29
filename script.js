@@ -1,37 +1,39 @@
-// ====== MOBILE MENU FUNCTIONALITY ======
+// ====== URBAN MINIMALIST SCRIPT ======
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Functionality
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
-    const navItems = document.querySelectorAll('.nav-links a');
     
-    // Toggle mobile menu
     if (mobileMenu) {
         mobileMenu.addEventListener('click', function() {
             this.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
     }
-    
-    // Close mobile menu when clicking on a link
+
+    // Close mobile menu when clicking on links
+    const navItems = document.querySelectorAll('.nav-link');
     navItems.forEach(item => {
         item.addEventListener('click', function() {
             mobileMenu.classList.remove('active');
             navLinks.classList.remove('active');
         });
     });
-    
+
     // Navbar background on scroll
-    const header = document.querySelector('header');
+    const header = document.querySelector('.urban-header');
     
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            header.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+        if (window.scrollY > 50) {
+            header.style.background = 'rgba(10, 10, 10, 0.95)';
+            header.style.backdropFilter = 'blur(20px)';
         } else {
-            header.style.backgroundColor = 'rgba(10, 10, 10, 0.9)';
+            header.style.background = 'rgba(10, 10, 10, 0.9)';
+            header.style.backdropFilter = 'blur(20px)';
         }
     });
-    
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -45,52 +47,40 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Simple fade-in animation on scroll
-    const sections = document.querySelectorAll('.section');
-    
-    const fadeInOnScroll = function() {
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            const sectionVisible = 150;
-            
-            if (sectionTop < window.innerHeight - sectionVisible) {
-                section.style.opacity = '1';
-                section.style.transform = 'translateY(0)';
+
+    // Scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    };
-    
-    // Set initial state
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    });
-    
-    // Check on load and scroll
-    fadeInOnScroll();
-    window.addEventListener('scroll', fadeInOnScroll);
+    }, observerOptions);
 
-    // Add hover effects for skill items
-    const skillItems = document.querySelectorAll('.skill-category li');
-    
-    skillItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.color = 'var(--dark-text)';
-            this.style.transform = 'translateX(5px)';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.color = 'var(--dark-text-secondary)';
-            this.style.transform = 'translateX(0)';
-        });
+    // Observe elements for scroll animations
+    const animatedElements = document.querySelectorAll('.skill-category, .project-card, .contact-item');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
     });
 
-    // Add hover effects for buttons
-    const buttons = document.querySelectorAll('.btn');
-    
-    buttons.forEach(button => {
+    // Floating shapes animation enhancement
+    const floatingShapes = document.querySelectorAll('.floating-shape');
+    floatingShapes.forEach((shape, index) => {
+        shape.style.animationDelay = `${index * 2}s`;
+    });
+
+    // CTA button hover effects
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    ctaButtons.forEach(button => {
         button.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-2px)';
         });
@@ -100,28 +90,87 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Skill category hover effects
+    const skillCategories = document.querySelectorAll('.skill-category');
+    skillCategories.forEach(category => {
+        category.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        category.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Terminal typing effect
+    const terminalLine = document.querySelector('.terminal-line:last-child');
+    if (terminalLine) {
+        const text = terminalLine.textContent;
+        terminalLine.textContent = '';
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                terminalLine.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        
+        // Start typing when terminal is in view
+        const terminalObserver = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting) {
+                setTimeout(typeWriter, 1000);
+                terminalObserver.unobserve(entries[0].target);
+            }
+        });
+        
+        terminalObserver.observe(document.querySelector('.visual-terminal'));
+    }
+
     // Add current year to footer
     const currentYear = new Date().getFullYear();
-    const footerText = document.querySelector('footer p');
-    if (footerText) {
-        footerText.textContent = `© ${currentYear} Francisco González-Llanos. Built with ❤️ and lots of coffee.`;
+    const yearElement = document.querySelector('.footer-bottom p');
+    if (yearElement) {
+        yearElement.textContent = yearElement.textContent.replace('2025', currentYear);
     }
+
+    // Mouse move parallax effect
+    document.addEventListener('mousemove', function(e) {
+        const floatingShapes = document.querySelectorAll('.floating-shape');
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        floatingShapes.forEach((shape, index) => {
+            const speed = (index + 1) * 0.5;
+            const x = (mouseX - 0.5) * speed * 20;
+            const y = (mouseY - 0.5) * speed * 20;
+            
+            shape.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    });
+
+    // Preloader (optional - can be removed)
+    window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+    });
 });
 
-// ====== ADDITIONAL ENHANCEMENTS ======
-
-// Debounce function for scroll events
-function debounce(func, wait) {
+// Performance optimization
+const debounce = (func, wait) => {
     let timeout;
-    return function() {
-        const context = this, args = arguments;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
         clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), wait);
+        timeout = setTimeout(later, wait);
     };
-}
+};
 
-// Throttle function for resize events
-function throttle(func, limit) {
+// Throttle for scroll events
+const throttle = (func, limit) => {
     let inThrottle;
     return function() {
         const args = arguments;
@@ -134,14 +183,14 @@ function throttle(func, limit) {
     }
 }
 
-// Enhanced scroll handler with debounce
-window.addEventListener('scroll', debounce(function() {
-    // Add any additional scroll-based animations here
-}, 10));
+// Enhanced scroll handler
+window.addEventListener('scroll', throttle(function() {
+    // Additional scroll-based animations can be added here
+}, 100));
 
-// Handle window resize
-window.addEventListener('resize', throttle(function() {
-    // Close mobile menu if window is resized to desktop size
+// Handle resize events
+window.addEventListener('resize', debounce(function() {
+    // Close mobile menu on desktop
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     
@@ -150,3 +199,14 @@ window.addEventListener('resize', throttle(function() {
         navLinks.classList.remove('active');
     }
 }, 250));
+
+// Add some console art for fun
+console.log(`
+%cFRANCISCO G.V. - CLOUD ENGINEER
+%cMinimalist Urban Design • Orange to Purple Gradient
+%cBuilt with passion for cloud technologies 🚀
+`,
+'color: #FF6B35; font-size: 16px; font-weight: bold;',
+'color: #8A2BE2; font-size: 12px;',
+'color: #888; font-size: 10px;'
+);
